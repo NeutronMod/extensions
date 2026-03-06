@@ -14,13 +14,18 @@
   const canUseRPC = typeof RPC !== "undefined";
   const client = canUseRPC && new RPC.Client({ transport: "ipc" });
 
-  let clientID = "";
+  let clientId = "";
   let clientData = {};
   let clientReady = false;
+  let loginInProgress = false;
 
   if (canUseRPC) {
     client.on("ready", () => {
       clientReady = true;
+    });
+    client.on("disconnected", () => {
+      clientReady = false;
+      loginInProgress = false;
     });
   }
 
@@ -144,13 +149,27 @@
     }
     setClientID(args) {
       if (!canUseRPC) return;
-      args.ID = Scratch.Cast.toNumber(args.ID);
-      clientID = args.ID;
-      client.login({ clientID }).catch(console.error);
+      const nextClientId = Scratch.Cast.toString(args.ID).trim();
+      if (!nextClientId) return;
+
+      clientId = nextClientId;
+      clientReady = false;
+
+      if (loginInProgress) return;
+      loginInProgress = true;
+
+      client
+        .login({ clientId })
+        .catch((error) => {
+          console.error("Rich Presence login failed:", error);
+        })
+        .finally(() => {
+          loginInProgress = false;
+        });
     }
     clientID() {
       if (!canUseRPC) return "Rich Presence unavailable";
-      return clientID;
+      return clientId;
     }
     setData(args) {
       if (!canUseRPC) return;
@@ -212,6 +231,7 @@
     }
     updatePresence() {
       if (!canUseRPC) return;
+      if (!clientReady) return;
       clientData.instance = false;
       client.setActivity(clientData);
     }
