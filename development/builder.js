@@ -270,10 +270,11 @@ class ExtensionFile extends BuildFile {
       }
       if (
         person.link &&
-        !person.link.startsWith("https://scratch.mit.edu/users/")
+        !person.link.startsWith("https://scratch.mit.edu/users/") &&
+        !person.link.startsWith("https://github.com/")
       ) {
         throw new Error(
-          `Link for ${person.name} does not point to a Scratch user`
+          `Link for ${person.name} does not point to a Scratch or GitHub user`
         );
       }
     }

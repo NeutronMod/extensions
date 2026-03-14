@@ -33,7 +33,7 @@
     getInfo() {
       return {
         id: "cubesterRichPresence",
-        name: "Rich Presence",
+        name: Scratch.translate("Rich Presence"),
         color1: "#4D5057",
         docsURI: "https://extensions.nitrobolt.org/CubesterYT/RichPresence",
 
@@ -78,7 +78,7 @@
           },
           {
             opcode: "setTimestamp",
-            text: "turn timestamp [TOGGLE]",
+            text: Scratch.translate("turn timestamp [TOGGLE]"),
             blockType: Scratch.BlockType.COMMAND,
             arguments: {
               TOGGLE: {
