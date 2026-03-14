@@ -192,17 +192,30 @@
         menus: {
           vectorOp: {
             acceptReporters: false,
-            items: ["dot product of", "distance between", "angle between"],
+            items: [
+              {
+                text: Scratch.translate("dot product of"),
+                value: "dot product of",
+              },
+              {
+                text: Scratch.translate("distance between"),
+                value: "distance between",
+              },
+              {
+                text: Scratch.translate("angle between"),
+                value: "angle between",
+              },
+            ],
           },
           vectorTransform: {
             acceptReporters: false,
             items: [
-              "normalize",
-              "absolute",
-              "negate",
-              "floor",
-              "ceil",
-              "round",
+              { text: Scratch.translate("normalize"), value: "normalize" },
+              { text: Scratch.translate("absolute"), value: "absolute" },
+              { text: Scratch.translate("negate"), value: "negate" },
+              { text: Scratch.translate("floor"), value: "floor" },
+              { text: Scratch.translate("ceil"), value: "ceil" },
+              { text: Scratch.translate("round"), value: "round" },
             ],
           },
         },
