@@ -136,18 +136,6 @@
             },
           },
           {
-            opcode: "vectorTransform",
-            text: Scratch.translate("[OP] [VEC]"),
-            blockType: Scratch.BlockType.ARRAY,
-            arguments: {
-              OP: {
-                type: Scratch.ArgumentType.STRING,
-                menu: "vectorTransform",
-              },
-              VEC: { type: Scratch.ArgumentType.ARRAY },
-            },
-          },
-          {
             opcode: "rotate",
             text: Scratch.translate(
               "rotate [VEC] in axes [I] [J] by [A] degrees"
@@ -158,6 +146,18 @@
               I: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 },
               J: { type: Scratch.ArgumentType.NUMBER, defaultValue: 1 },
               A: { type: Scratch.ArgumentType.NUMBER, defaultValue: 90 },
+            },
+          },
+          {
+            opcode: "vectorTransform",
+            text: Scratch.translate("[OP] [VEC]"),
+            blockType: Scratch.BlockType.ARRAY,
+            arguments: {
+              OP: {
+                type: Scratch.ArgumentType.STRING,
+                menu: "vectorTransform",
+              },
+              VEC: { type: Scratch.ArgumentType.ARRAY },
             },
           },
           {
