@@ -1,3 +1,11 @@
+// Name: Vectors
+// ID: ddeVectors
+// Description: Manipulate vectors with common math operations.
+// By: ddededodediamante <https://github.com/ddededodediamante/>
+// License: MPL-2.0
+
+// Version V.1.0.0
+
 (function (Scratch) {
   "use strict";
 
