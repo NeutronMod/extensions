@@ -150,7 +150,7 @@
           },
           {
             opcode: "vectorTransform",
-            text: Scratch.translate("[OP] [VEC]"),
+            text: Scratch.translate("[OP]​[VEC]"),
             blockType: Scratch.BlockType.ARRAY,
             arguments: {
               OP: {
