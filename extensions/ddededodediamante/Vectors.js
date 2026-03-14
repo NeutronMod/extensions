@@ -13,7 +13,7 @@
     getInfo() {
       return {
         id: "ddeVectors",
-        name: "Vectors",
+        name: Scratch.translate("Vectors"),
         color1: "#5BB998",
         blocks: [
           {
