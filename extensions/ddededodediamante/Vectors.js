@@ -33,7 +33,7 @@
             arguments: {
               X: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 },
               Y: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 },
-              z: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 },
+              Z: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 },
             },
           },
           {
