@@ -237,11 +237,18 @@
     }
 
     vector2D(args) {
-      return new Float32Array([args.X, args.Y]);
+      return new Float32Array([
+        Scratch.Cast.toNumber(args.X),
+        Scratch.Cast.toNumber(args.Y),
+      ]);
     }
 
     vector3D(args) {
-      return new Float32Array([args.X, args.Y, args.Z]);
+      return new Float32Array([
+        Scratch.Cast.toNumber(args.X),
+        Scratch.Cast.toNumber(args.Y),
+        Scratch.Cast.toNumber(args.Z),
+      ]);
     }
 
     vectorFromAngle(args) {
